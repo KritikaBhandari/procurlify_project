@@ -1,6 +1,6 @@
 # procurlify_project
 Transparent & Fair Tender Management System
-Procurlify: Blockchain-Based Transparent Tender Management System
+
 
 Procurlify is an end-to-end decentralized platform designed to reform the traditional government and enterprise tendering process. It introduces trust, automation, and full transparency using blockchain and smart contracts. From publishing a tender to verifying completion milestones and releasing payments, every transaction is securely recorded and verifiable by all participants.
 
