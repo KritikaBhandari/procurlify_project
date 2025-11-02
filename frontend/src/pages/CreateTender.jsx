@@ -68,7 +68,6 @@ const CreateTender = () => {
       //   throw new Error("Bid end time must be after start time");
       // }
 
-      // Step 1: Create tender on blockchain
       setStatus("Step 1/3: Deploying tender smart contract...");
       const blockchainReceipt = await createTenderOnChain(
         title,
@@ -127,7 +126,7 @@ const CreateTender = () => {
         closing_date: new Date(bidEndTimestamp).toISOString(),
         opening_date: new Date(bidStartTimestamp).toISOString(), // For backward compatibility
         created_by: userId, // Use the valid user ID
-        status: 'draft',
+        status: 'open',
         is_allotted: false,
         blockchain_tx_hash: blockchainReceipt.hash,
         blockchain_tender_id: tenderId
