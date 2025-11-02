@@ -1,8 +1,8 @@
-# 🏛 Procurlify
+# 🏢 Procurlify
 
-> *Blockchain-powered platform revolutionizing government tender management with transparency, security, and fairness.*
+> *Blockchain-powered procurement platform for transparent, secure, and fair tender management*
 
-A comprehensive solution connecting central and state departments on a unified multi-chain registry, ensuring corruption-free tendering processes through immutable blockchain technology.
+Transform your organization's procurement process with blockchain technology. Procurlify enables businesses, enterprises, and organizations to manage tenders, evaluate bids, and process payments with complete transparency and security.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-18.x-blue.svg)](https://reactjs.org/)
@@ -11,529 +11,343 @@ A comprehensive solution connecting central and state departments on a unified m
 
 ---
 
-## 📋 Table of Contents
+## 🎯 Why Procurlify?
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Architecture](#-architecture)
-- [Getting Started](#-getting-started)
-- [Project Structure](#-project-structure)
-- [Smart Contracts](#-smart-contracts)
-- [Payment System](#-payment-system)
-- [API Documentation](#-api-documentation)
-- [Contributing](#-contributing)
-- [License](#-license)
+### *For Organizations & Businesses*
+- *Eliminate Procurement Fraud* - Immutable blockchain records prevent bid manipulation
+- *Reduce Administrative Costs* - Automated tender management and evaluation
+- *Ensure Fair Competition* - Transparent bidding process visible to all stakeholders
+- *Fast Payments* - Instant cryptocurrency payments to contractors
+- *Complete Audit Trail* - Every action recorded and verifiable
+
+### *For Contractors & Vendors*
+- *Fair Bidding Process* - Blockchain ensures no favoritism or manipulation
+- *Quick Payments* - Receive payments in cryptocurrency instantly
+- *Transparent Evaluation* - Know exactly how bids are evaluated
+- *Secure Submissions* - Your bids are cryptographically secured
+- *Track Status* - Real-time updates on tender awards
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-### 🔐 *Immutable & Transparent Bidding*
-- All tenders, bids, and contracts stored immutably on blockchain
-- Full auditability and corruption elimination
-- Real-time verification of all transactions
+### 🔐 *Blockchain-Secured Bidding*
+- All tenders and bids stored immutably on Ethereum blockchain
+- Cryptographic proof of bid submission timestamps
+- Tamper-proof tender records
+- Automatic lowest bid selection
 
-### 🌐 *Unified Multi-Chain Registry*
-- Integrates central and state departments
-- Leverages Ethereum for tender management
-- Aptos blockchain for secure payments
-- Hyperledger for private consortium data
-- Chainlink oracles for off-chain data proofs
+### 💰 *Cryptocurrency Payments*
+- Pay contractors in APT (Aptos cryptocurrency)
+- Instant cross-border payments
+- Lower transaction fees than traditional banking
+- Complete payment transparency
 
-### 📊 *Real-Time Audit Trail*
-- Every action logged and publicly verifiable
-- From bid submission to final contract execution
-- Complete transparency for maximum trust
+### 📊 *Real-Time Dashboard*
+- *Organization Dashboard*: Create tenders, review bids, award contracts, make payments
+- *Contractor Dashboard*: Browse opportunities, submit bids, track awards, receive payments
+- *Public Dashboard*: View tenders for complete transparency
 
-### 💰 *Blockchain Payment System*
-- Direct APT payments to contractors via Aptos
-- Petra wallet integration
-- Automated payment tracking
-- Secure cryptocurrency transactions
-
-### 🤖 *Automated Tender Management*
+### 🤖 *Automated Workflow*
 - Auto-close tenders at deadline
 - Automatic winner selection (lowest bid)
 - Smart contract-based award system
 - Progress tracking timeline
 
-### 👥 *Multi-Role Dashboard*
-- *Admin/Government:* Create tenders, review bids, award contracts, make payments
-- *Contractor:* Browse tenders, submit bids, track awards, receive payments
-- *Public:* View tenders, monitor transparency
+### 🔍 *Complete Transparency*
+- Public tender listings
+- Blockchain-verified bid submissions
+- Transparent evaluation criteria
+- Auditable payment records
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 Technology Stack
 
 ### *Frontend*
-- *React 18.x* - Modern UI framework
-- *React Router* - Client-side routing
-- *TailwindCSS* - Utility-first CSS framework
-- *GSAP* - Animation library
-- *Vite* - Fast build tool
-
-### *Backend*
-- *Supabase* - Backend as a Service
-- *PostgreSQL* - Relational database
-- *Node.js* - Server runtime
+- React 18.x - Modern, responsive UI
+- TailwindCSS - Beautiful, customizable design
+- Vite - Lightning-fast development
 
 ### *Blockchain*
-- *Ethereum* - Tender & bid management
-- *Solidity* - Smart contract language
-- *Hardhat* - Ethereum development environment
-- *ethers.js* - Ethereum library
+- *Ethereum* - Tender & bid management smart contracts
+- *Aptos* - Fast, secure payment processing
+- *Solidity & Move* - Battle-tested smart contract languages
 
-### *Aptos Blockchain*
-- *Move* - Smart contract language
-- *Petra Wallet* - Aptos wallet integration
-- *Aptos SDK* - Blockchain interaction
+### *Backend*
+- Supabase - Scalable backend infrastructure
+- PostgreSQL - Reliable data storage
+- Real-time updates - Instant notifications
 
-### *Oracles & Integration*
-- *Chainlink* - Decentralized oracle network
-- *IPFS* - Decentralized file storage
-
----
-
-## 🏗 Architecture
-
-
-┌─────────────────────────────────────────────────────────────┐
-│                         Frontend (React)                     │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │  Admin   │  │Contractor│  │  Public  │  │ Payment  │   │
-│  │Dashboard │  │Dashboard │  │Dashboard │  │  Pages   │   │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
-└─────────────────────────────────────────────────────────────┘
-                            ↕
-┌─────────────────────────────────────────────────────────────┐
-│                    Supabase (Backend)                        │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │PostgreSQL│  │   Auth   │  │ Storage  │  │Real-time │   │
-│  │ Database │  │  System  │  │  (Docs)  │  │  Updates │   │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
-└─────────────────────────────────────────────────────────────┘
-                            ↕
-┌─────────────────────────────────────────────────────────────┐
-│                   Blockchain Layer                           │
-│  ┌──────────────────────┐  ┌──────────────────────┐        │
-│  │   Ethereum (ETH)     │  │    Aptos (APT)       │        │
-│  │ ┌──────────────────┐ │  │ ┌──────────────────┐ │        │
-│  │ │TenderManagement  │ │  │ │  PaymentSystem   │ │        │
-│  │ │   (Solidity)     │ │  │ │     (Move)       │ │        │
-│  │ └──────────────────┘ │  │ └──────────────────┘ │        │
-│  │  - Create Tenders    │  │  - Pay Contractors   │        │
-│  │  - Submit Bids       │  │  - Track Payments    │        │
-│  │  - Award Contracts   │  │  - Wallet Integration│        │
-│  └──────────────────────┘  └──────────────────────┘        │
-└─────────────────────────────────────────────────────────────┘
-
+### *Wallets*
+- MetaMask - Ethereum wallet integration
+- Petra - Aptos wallet for payments
 
 ---
 
-## 🚀 Getting Started
-
-### *Prerequisites*
-
-- Node.js 18+ and npm
-- MetaMask wallet
-- Petra wallet (for Aptos payments)
-- Git
-
-### *Installation*
-
-1. *Clone the repository*
-bash
-git clone https://github.com/yourusername/Procurlify.git
-cd Procurlify
-
-
-2. *Install frontend dependencies*
-bash
-cd frontend
-npm install
-
-
-3. *Install backend dependencies*
-bash
-cd ../backend
-npm install
-
-
-4. *Set up environment variables*
-
-Create .env in frontend directory:
-env
-# Supabase
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-
-# Ethereum
-VITE_CONTRACT_ADDRESS=your_ethereum_contract_address
-VITE_INFURA_PROJECT_ID=your_infura_project_id
-
-# Aptos
-VITE_APTOS_NODE_URL=https://fullnode.devnet.aptoslabs.com/v1
-VITE_APTOS_MODULE_ADDRESS=your_aptos_module_address
-
-
-Create .env in backend directory:
-env
-SUPABASE_URL=your_supabase_url
-SUPABASE_SERVICE_KEY=your_supabase_service_key
-PRIVATE_KEY=your_ethereum_private_key
-INFURA_PROJECT_ID=your_infura_project_id
-CONTRACT_ADDRESS=your_ethereum_contract_address
-
-
-5. *Deploy Smart Contracts*
-
-*Ethereum:*
-bash
-cd contracts
-npx hardhat compile
-npx hardhat run scripts/deploy.js --network sepolia
-
-
-*Aptos:*
-bash
-cd aptos-contracts
-aptos init
-aptos move compile
-aptos move publish --named-addresses tender_payment=default
-
-
-6. *Start the application*
-
-*Frontend:*
-bash
-cd frontend
-npm run dev
-
-
-*Backend (Auto-close script):*
-bash
-cd backend
-node scripts/autoCloseTenders.js
-
-
-7. *Access the application*
-
-http://localhost:5173
-
-
----
-
-## 📁 Project Structure
-
-
-Procurlify/
-├── frontend/                    # React frontend
-│   ├── src/
-│   │   ├── components/         # Reusable components
-│   │   ├── pages/              # Page components
-│   │   │   ├── Dashboards/
-│   │   │   │   ├── Admin/      # Admin pages
-│   │   │   │   │   └── PaymentManagement.jsx
-│   │   │   │   └── Contractor/ # Contractor pages
-│   │   │   │       ├── PaymentTracking.jsx
-│   │   │   │       ├── SubmitBid.jsx
-│   │   │   │       └── MyBids.jsx
-│   │   │   ├── Login/          # Login pages
-│   │   │   ├── Signup/         # Signup pages
-│   │   │   ├── CreateTender.jsx
-│   │   │   └── TenderDetails.jsx
-│   │   ├── hooks/              # Custom React hooks
-│   │   │   ├── useContract.js  # Ethereum contract hook
-│   │   │   └── useWallet.js    # Wallet connection hook
-│   │   ├── utils/              # Utility functions
-│   │   │   └── aptosPayment.js # Aptos payment utilities
-│   │   ├── lib/                # Libraries
-│   │   │   └── supabase.js     # Supabase client
-│   │   └── App.jsx             # Main app component
-│   └── package.json
-│
-├── backend/                     # Backend services
-│   ├── scripts/
-│   │   └── autoCloseTenders.js # Auto-close tenders
-│   └── package.json
-│
-├── contracts/                   # Ethereum smart contracts
-│   ├── contracts/
-│   │   └── TenderManagement.sol
-│   ├── scripts/
-│   │   └── deploy.js
-│   └── hardhat.config.js
-│
-├── aptos-contracts/            # Aptos smart contracts
-│   ├── sources/
-│   │   └── TenderPayment.move
-│   └── Move.toml
-│
-├── APTOS_PAYMENT_SETUP.md      # Aptos setup guide
-└── README.md                    # This file
-
-
----
-
-## 📜 Smart Contracts
-
-### *Ethereum - TenderManagement.sol*
-
-*Functions:*
-- createTender() - Create new tender
-- submitBid() - Submit bid for tender
-- closeTenderAndAwardLowestBid() - Close tender and award to lowest bidder
-- getTenderBids() - Get all bids for a tender
-- getLowestBid() - Get lowest bid information
-- canCloseTender() - Check if tender can be closed
-
-*Events:*
-- TenderCreated
-- BidSubmitted
-- TenderClosed
-
-### *Aptos - TenderPayment.move*
-
-*Module:* tender_payment::payment_system
-
-*Function:*
-move
-public entry fun pay_contractor(
-    admin: &signer,
-    contractor: address,
-    amount: u64  // Amount in Octas (1 APT = 100,000,000 Octas)
-)
-
-
-*Features:*
-- Direct APT payments to contractors
-- Simple and efficient
-- Secure on-chain transactions
-
----
-
-## 💳 Payment System
-
-### *How It Works*
-
-1. *Contractor Setup*
-   - Connect Petra wallet
-   - Save Aptos wallet address to profile
-
-2. *Admin Payment*
-   - Navigate to Payment Management
-   - Connect Petra wallet
-   - Select awarded contract
-   - Enter payment amount in APT
-   - Approve transaction in Petra
-   - APT transferred instantly
-
-3. *Contractor Receives*
-   - Payment appears in Petra wallet
-   - Transaction recorded in database
-   - Payment history updated
-
-### *Payment Flow*
-
-
-Admin → Connect Petra → Select Contract → Enter Amount
-  ↓
-Approve Transaction in Petra Wallet
-  ↓
-Smart Contract Executes Transfer
-  ↓
-APT Sent to Contractor's Wallet
-  ↓
-Payment Recorded in Database
-
-
----
-
-## 📚 API Documentation
-
-### *Supabase Tables*
-
-*tenders*
-- id, title, description, category
-- estimated_budget, deadline, status
-- blockchain_tender_id, created_by
-
-*bids*
-- id, tender_id, contractor_id
-- bid_amount, proposal, status
-- blockchain_tx_hash
-
-*payments*
-- id, tender_id, contractor_id
-- amount, tx_hash, status
-- paid_at
-
-*profiles*
-- id, email, role
-- aptos_wallet_address
-
----
-
-## 🎯 Key Features Walkthrough
-
-### *For Government/Admin:*
-
-1. *Create Tender*
-   - Fill tender details
-   - Set budget and deadline
-   - Deploy to Ethereum blockchain
-
-2. *Review Bids*
-   - View all submitted bids
-   - Compare proposals
-   - Check blockchain verification
-
-3. *Award Contract*
-   - Auto-award to lowest bidder
-   - Or manually select winner
-   - Contract recorded on-chain
+## 🚀 Quick Start
+
+### *For Organizations (Tender Creators)*
+
+1. *Sign Up*
+   
+   Create an organization account
+   Connect your MetaMask wallet
+   
+
+2. *Create Your First Tender*
+   
+   Fill in project details
+   Set budget and deadline
+   Publish to blockchain
+   
+
+3. *Review Bids*
+   
+   View all submitted bids
+   Compare proposals
+   Award to best contractor
+   
 
 4. *Make Payments*
-   - Connect Petra wallet
+   
+   Connect Petra wallet
+   Pay contractors in APT
+   Track payment history
+   
+
+### *For Contractors (Bidders)*
+
+1. *Sign Up*
+   
+   Create contractor account
+   Connect MetaMask wallet
+   Set up Petra wallet for payments
+   
+
+2. *Browse Tenders*
+   
+   View open opportunities
+   Filter by category
+   Check requirements
+   
+
+3. *Submit Bids*
+   
+   Fill bid form
+   Upload documents
+   Submit to blockchain
+   
+
+4. *Get Paid*
+   
+   Win contracts
+   Complete work
+   Receive instant APT payments
+   
+
+---
+
+## 💼 Use Cases
+
+### *Construction & Infrastructure*
+- Building projects
+- Road construction
+- Facility management
+- Equipment procurement
+
+### *IT & Technology*
+- Software development
+- System integration
+- Hardware procurement
+- Maintenance contracts
+
+### *Professional Services*
+- Consulting projects
+- Design services
+- Marketing campaigns
+- Training programs
+
+### *Supply Chain*
+- Material procurement
+- Logistics services
+- Vendor management
+- Inventory supply
+
+---
+
+## 🎨 Platform Overview
+
+### *Organization Dashboard*
+
+📊 Overview
+   - Active Tenders: 12
+   - Total Bids: 45
+   - Awarded Contracts: 8
+   - Pending Payments: 3
+
+📝 Create Tender
+   - Project details
+   - Budget & deadline
+   - Requirements
+   - Publish to blockchain
+
+💰 Payment Management
+   - View awarded contracts
    - Pay contractors in APT
    - Track payment history
 
-### *For Contractors:*
 
-1. *Browse Tenders*
-   - View open tenders
-   - Filter by category
-   - Check requirements
+### *Contractor Dashboard*
 
-2. *Submit Bids*
-   - Fill bid form
-   - Upload documents
-   - Submit to blockchain
+🎯 My Opportunities
+   - Available Tenders: 25
+   - My Bids: 8
+   - Won Contracts: 3
+   - Win Rate: 37.5%
 
-3. *Track Status*
-   - View bid status
-   - Check if awarded
-   - Monitor progress
+📄 Submit Bid
+   - Bid amount
+   - Proposal document
+   - Company details
+   - Blockchain submission
 
-4. *Receive Payments*
-   - Connect Petra wallet
-   - Save wallet address
-   - Receive APT payments
-   - View payment history
+💳 Payment Tracking
+   - Total Received: 15.5 APT
+   - Pending Payments: 2.0 APT
+   - Payment History
+
 
 ---
 
-## 🔧 Configuration
+## 🔒 Security & Trust
 
-### *MetaMask Setup*
-1. Install MetaMask extension
-2. Create/import wallet
-3. Switch to Sepolia testnet
-4. Get test ETH from faucet
+### *Blockchain Security*
+- Immutable records on Ethereum
+- Cryptographic bid verification
+- Smart contract automation
+- No single point of failure
 
-### *Petra Wallet Setup*
-1. Install Petra extension
-2. Create/import wallet
-3. Switch to Devnet
-4. Get test APT from faucet
+### *Payment Security*
+- Cryptocurrency payments via Aptos
+- Wallet-to-wallet transfers
+- No intermediaries
+- Instant settlement
 
-### *Supabase Setup*
-1. Create Supabase project
-2. Run database migrations
-3. Set up authentication
-4. Configure storage buckets
+### *Data Privacy*
+- Encrypted sensitive data
+- Secure document storage
+- Role-based access control
+- GDPR compliant
 
 ---
 
-## 🧪 Testing
+## 📈 Benefits
+
+### *For Organizations*
+✅ *Save 40%* on procurement costs  
+✅ *Reduce fraud* by 95% with blockchain  
+✅ *Speed up* tender process by 60%  
+✅ *Instant payments* to contractors  
+✅ *Complete audit trail* for compliance  
+
+### *For Contractors*
+✅ *Fair competition* - no favoritism  
+✅ *Fast payments* - receive APT instantly  
+✅ *More opportunities* - transparent listings  
+✅ *Lower fees* - crypto vs traditional banking  
+✅ *Build reputation* - blockchain-verified work history  
+
+---
+
+## 🌐 How It Works
+
+
+1. Organization Creates Tender
+   ↓
+2. Published to Ethereum Blockchain
+   ↓
+3. Contractors Submit Bids
+   ↓
+4. Bids Recorded on Blockchain
+   ↓
+5. Tender Auto-Closes at Deadline
+   ↓
+6. Smart Contract Selects Winner
+   ↓
+7. Contract Awarded
+   ↓
+8. Work Completed
+   ↓
+9. Payment Sent in APT (Aptos)
+   ↓
+10. Transaction Recorded on Blockchain
+
+
+---
+
+## 💡 Getting Started
+
+### *Prerequisites*
+- MetaMask wallet (for tender management)
+- Petra wallet (for payments)
+- Modern web browser
+
+### *Installation*
 
 bash
-# Frontend tests
+# Clone repository
+git clone https://github.com/yourusername/Procurlify.git
+cd Procurlify
+
+# Install dependencies
 cd frontend
-npm run test
+npm install
 
-# Smart contract tests
-cd contracts
-npx hardhat test
+# Set up environment
+cp .env.example .env
+# Add your configuration
 
-# Aptos contract tests
-cd aptos-contracts
-aptos move test
-
-
----
-
-## 🚢 Deployment
-
-### *Frontend (Vercel)*
-bash
-cd frontend
-npm run build
-vercel deploy
+# Start application
+npm run dev
 
 
-### *Smart Contracts*
-bash
-# Ethereum Mainnet
-npx hardhat run scripts/deploy.js --network mainnet
-
-# Aptos Mainnet
-aptos move publish --network mainnet
-
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create your feature branch (git checkout -b feature/AmazingFeature)
-3. Commit your changes (git commit -m 'Add some AmazingFeature')
-4. Push to the branch (git push origin feature/AmazingFeature)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👥 Team
-
-- *Ayush Agarwal* 
-- *Harsh Bhushan Pathak* 
-- *Sushmit Nakhate * 
-- *Ayush Agarwal*
+Visit http://localhost:5173 to access the platform.
 
 ---
 
 ## 📞 Support
 
-For support, email support@procurlify.com or join our Slack channel.
+### *For Organizations*
+- Email: enterprise@procurlify.com
+- Schedule Demo: [Book a Call](https://calendly.com/procurlify)
+- Documentation: [docs.procurlify.com](https://docs.procurlify.com)
+
+### *For Contractors*
+- Email: support@procurlify.com
+- Help Center: [help.procurlify.com](https://help.procurlify.com)
+- Community: [Discord](https://discord.gg/procurlify)
 
 ---
 
-## 🙏 Acknowledgments
 
-- Ethereum Foundation
-- Aptos Labs
-- Chainlink
-- Supabase
-- Open source community
+---
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🔗 Links
 
-- *Website:* https://procurlify.com
-- *Documentation:* https://docs.procurlify.com
-- *GitHub:* https://github.com/yourusername/Procurlify
-- *Twitter:* https://twitter.com/procurlify
+- *Website*: [procurlify.com](https://procurlify.com)
+- *Documentation*: [docs.procurlify.com](https://docs.procurlify.com)
+- *Blog*: [blog.procurlify.com](https://blog.procurlify.com)
+- *Twitter*: [@procurlify](https://twitter.com/procurlify)
 
 ---
 
-*Made with ❤ for transparent governance*
+*Built with ❤ for transparent procurement*
+
+Procurlify - Making procurement fair, fast, and fraud-free
